@@ -11,12 +11,17 @@ public class Dealership {
 		//Instantiate the vehicle and employee objects
 		Vehicle vehicle1 = new Vehicle("Honda", "Accord", 12000);
 		Vehicle vehicle2 = new Vehicle("Subaru", "Impreeza", 24000);
+		Vehicle vehicle3 = new Vehicle ("BMW", "M3", 30000);
+		Vehicle vehicle4 = new Vehicle ("BMW", "M3", 30000);
+
 		
 		Employee emp = new Employee();
 		
 		cust1.purchaseCar(vehicle1, emp, false);
 		cust2.purchaseCar(vehicle2, emp, true);
 		
+		boolean value  = vehicle3.equals(vehicle4);
+		System.out.println(value);
 	
 	
 	}

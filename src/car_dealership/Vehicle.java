@@ -1,5 +1,7 @@
 package car_dealership;
 
+import java.util.Objects;
+
 public class Vehicle {
 	private String make;
 	private String model;
@@ -35,6 +37,22 @@ public class Vehicle {
 	@Override
 	public String toString() {
 		return "Vehicle [make:" + make + ", model:" + model + ", price:" + price + "]";
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(make, model, price);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Vehicle other = (Vehicle) obj;
+		return Objects.equals(make, other.make) && Objects.equals(model, other.model)
+				&& Double.doubleToLongBits(price) == Double.doubleToLongBits(other.price);
 	}
 
 }
